@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func onGetTap(_ sender: UIButton) {
+        NetworkingService.shared.getPosts()
+    }
+    
+    @IBAction func onPostTap(_ sender: UIButton) {
+        let newPost = Post(notTitle: "Hello", body: "Goodbye")
+        NetworkingService.shared.send(newPost)
+    }
 }
 
